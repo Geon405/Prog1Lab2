@@ -1,7 +1,15 @@
 import java.util.Scanner;
 
+/**
+ * program that calculate the result of 5 operations.
+ * @author geonkim
+ */
 public class Question5 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args){
 
         Scanner kb = new Scanner(System.in);
@@ -9,7 +17,8 @@ public class Question5 {
        	int min = 0;
         int max = 100;
         int rand_int = (int)(Math.random()*(max-min+1)+min);
-
+        
+        // Prompt the user to enter the random number from 0 to 100
         System.out.print("Enter random number between 0 and 100: ");
         int number = kb.nextInt();
 
