@@ -13,27 +13,27 @@ public class Question4{
     public static void main(String[] args){
             
         // Prompt the user for a URL
-        System.out.print("Enter an email address: ");
-
-        Scanner in = new Scanner(System.in);
-        String email_address = in.nextLine();
-            
-        //To calculate the size of the URL
+        Scanner kb = new Scanner(System.in);
+        System.out.print("Enter a URL: ");
+        String address = kb.nextLine();
         int count = 0;
             
-        for(int i = 0; i<email_address.length(); i++){
-            if(email_address.charAt(i) != 0)
+        for(int i = 0; i<address.length(); i++){
+            if(address.charAt(i) != 0)
                 count++;
         }
         
         System.out.println("Verifying an URL with " + count + " characters");
+        int space = address.length();
+        String str = "";
+        String address2 = address.substring(0,8);
         
-        boolean isValid = true;
-        
-        if(isValid){
-            System.out.println("Is this a valid and secure URL?: true");
-        } else {
-            System.out.println("Is this a valid and secure URL?: false");
+        if (address2.equals("https://")) {
+            System.out.println("Is this a valid and secure URL?: True");
+        }
+        else
+        {
+            System.out.println("Is this a valid and secure URL?: False");
         }                    
     }
 }
