@@ -1,33 +1,35 @@
 import java.util.Scanner;
 
-/**
- * program to calculate the total price included taxes and tips.
- * @author geonkim
- */
 public class Question2 {
 
-    /**
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
+    public static void main (String [] args) {
 
         Scanner kb = new Scanner(System.in);
+
+	System.out.print("Enter your weight in pound: ");
+
+	double pound = kb.nextDouble();
+
+	System.out.print("Enter your height in feet: ");
+
+	double feet = kb.nextDouble();
+
+        // To convert pound to kilograms.
+	double kilograms = 0.453592 * pound;
         
-        // Prompt the user to enter the price of a product
-        System.out.print("Enter the price of a product in CAD: ");
-        double Price = kb.nextDouble();
-        
-        // Output values of sales tax such as TPS and TVQ
-        double TPS = Price * 0.09975;
-        double TVQ = Price * 0.05;
-        System.out.println("The values of sales tax in Quebec is " + '$' + (TPS + TVQ));
-        
-        // Output the tips
-        double tip = Price * 0.15;
-        System.out.println("The tips of 15% is " + '$' + tip);
-        
-        // Output the total price included with taxes and tips
-        System.out.println("The total amount that should be paid: " + '$' + (Price + TPS + TVQ + tip));
+        // To convert feet to meter.
+	double meter = 0.3048 * feet;
+
+        // To calculate the BMI.
+	double bmi = (kilograms / Math.pow(meter, 2));
+
+        // Prints the output of weight in kilograms.
+	System.out.printf("The weight converted to kilograms is: %.2fkg", kilograms);
+
+        // Prints the output of height in meter.
+	System.out.printf("\nThe height converted to meters is %.2fm", meter);
+
+        // Prints the output BMI.
+	System.out.printf("\nThe BMI is %.2f\n", bmi);
     }
 }
