@@ -1,42 +1,26 @@
 import java.util.Scanner;
 
-/**
- * program that calculate the result of 5 operations.
- * @author geonkim
- */
-public class Question5 {
+public class Question5{
 
-    /**
-     *
-     * @param args
-     */
-    public static void main(String[] args){
+public static void main(String[] args){
 
-        Scanner kb = new Scanner(System.in);
+	Scanner kb = new Scanner(System.in);
 
-       	int min = 0;
-        int max = 100;
-        int rand_int = (int)(Math.random()*(max-min+1)+min);
+	System.out.print("Enter the firstname and the last name with comma between it: ");
+
+	String name = kb.nextLine();
         
-        // Prompt the user to enter the random number from 0 to 100
-        System.out.print("Enter random number between 0 and 100: ");
-        int number = kb.nextInt();
+        // To find the position where the comma(,) is.
+	int position = name.indexOf(",");
 
-        // power of 2
-        int power1 = (int)Math.pow(number,2);
-        System.out.println("Powers of 2 is " + power1);
+        // To change first name to the upper case.
+	String fName = name.substring(0, position).toUpperCase();
 
-        // power of 3
-        int power2 = (int)Math.pow(number,2);
-        System.out.println("Powers of 2 is " + power2);
-
-        // square root
-        System.out.println("Square root of input is " + Math.sqrt(number));
-
-        // natural logarithm
-	System.out.println("Natural logarithm of input is " + Math.log(number));
-
-	// base 10 logarithm
-	System.out.println("Base 10 logarithm of input is " + Math.log10(number));
-    }
+        // To change last name to the lower case.
+	String lName = name.substring(position+1).toLowerCase();
+        
+        // Prints the output.
+	System.out.println("Name is " + fName + lName);
+	}
 }
+
