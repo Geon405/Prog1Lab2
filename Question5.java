@@ -1,26 +1,22 @@
 import java.util.Scanner;
 
-public class Question5{
+public class Question5_redo{
 
-public static void main(String[] args){
+	public static void main(String[] args){
 
 	Scanner kb = new Scanner(System.in);
 
-	System.out.print("Enter the firstname and the last name with comma between it: ");
+	System.out.print("Enter your name (last, first): ");
 
-	String name = kb.nextLine();
-        
-        // To find the position where the comma(,) is.
-	int position = name.indexOf(",");
+	String fullname = kb.nextLine();
+	int index = fullname.indexOf(',');
 
-        // To change first name to the upper case.
-	String fName = name.substring(0, position).toUpperCase();
+	String last = fullname.substring(0, index);
+	String first = fullname.substring(index + 2);
 
-        // To change last name to the lower case.
-	String lName = name.substring(position+1).toLowerCase();
-        
-        // Prints the output.
-	System.out.println("Name is " + fName + lName);
+	first = (first.substring(0,1)).toUpperCase() + first.substring(1);
+	last = last.substring(0,1).toUpperCase() + last.substring(1);
+
+	System.out.println("Formatted name: " + first + " " + last);
 	}
 }
-
